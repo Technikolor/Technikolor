@@ -1,0 +1,20 @@
+{
+    "name": "technikolor/app",
+    "description": "The Technikolor App",
+    "type": "project",
+    "require": {
+        "php": "^7.3",
+        "technikolor/framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
