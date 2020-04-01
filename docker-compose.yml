@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  app:
+    container_name: technikolor_php
+    image: technikolor-dev
+    env_file:
+      - .docker/shared_env
+    build:
+      target: dev
+      context: .
+      dockerfile: .docker/app/Dockerfile
+    volumes:
+      - .:/php/src/technikolor/app
+
+  nginx:
+    container_name: technikolor_nginx
+    image: technikolor-nginx
+    env_file:
+      - .docker/shared_env
+    build:
+      context: .
+      target: dev
+      dockerfile: .docker/nginx/Dockerfile
+    ports:
+      - "8080:80"
+    links:
+      - app
+    volumes:
+      - .docker/logs/nginx:/var/log/nginx
+      - .:/php/src/technikolor/app

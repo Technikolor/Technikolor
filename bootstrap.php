@@ -1,10 +1,7 @@
 <?php declare(strict_types=1);
 
-use Technikolor\Container\Container;
+use Technikolor\Bootstrap;
 
-$container = new Container();
+$bootstrap = new Bootstrap(__DIR__);
 
-// Remove this delegate if you not need auto-wiring
-$container->delegate(
-    (new \League\Container\ReflectionContainer())->cacheResolutions()
-);
+return $bootstrap->app();
