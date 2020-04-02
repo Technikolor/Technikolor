@@ -5,7 +5,8 @@
 <body>
 
 <div class="box">
-    <h1>Hi ho let's go!</h1>
+    <h1>Technikolor</h1>
+    <span>Easiest, most advanced, PHP Framework</span>
 </div>
 
 </body>
@@ -30,6 +31,7 @@
     .box {
         height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }

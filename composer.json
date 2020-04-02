@@ -3,7 +3,7 @@
     "description": "The Technikolor App",
     "type": "project",
     "require": {
-        "php": "^7.3",
+        "php": "^7.4",
         "technikolor/framework": "dev-master"
     },
     "autoload": {

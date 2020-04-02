@@ -26,5 +26,5 @@ services:
     links:
       - app
     volumes:
-      - .docker/logs/nginx:/var/log/nginx
+      - ./var/logs/nginx:/var/log/nginx
       - .:/php/src/technikolor/app

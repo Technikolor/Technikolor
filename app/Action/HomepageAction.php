@@ -8,10 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class HomepageAction
 {
-    /**
-     * @var Engine
-     */
-    private $template;
+    private Engine $template;
 
     public function __construct(Engine $template)
     {
