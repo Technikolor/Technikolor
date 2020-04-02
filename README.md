@@ -14,7 +14,7 @@ Inside project directory
 ```bash
 $ docker-compose up -d
 ```
-Then visit [localhost:8080](localhost:8080)
+Then visit [localhost:8080](http://localhost:8080)
 
 ## License
 
