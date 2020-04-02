@@ -19,3 +19,5 @@ Then visit [localhost:8080](localhost:8080)
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
