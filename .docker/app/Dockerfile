@@ -43,20 +43,7 @@ USER app
 
 EXPOSE 9001
 
-##### Stage 1: Prepare -> Prod #####
-FROM prepare as prod
-
-USER app
-RUN composer install --no-ansi --no-dev --no-interaction \
-    --no-progress --no-scripts --no-suggest --optimize-autoloader
-
-# Cleanup
-USER root
-RUN rm /usr/local/bin/composer \
-    && apt remove -y git \
-    && apt autoremove -y
-
-##### Stage 2: Prepare -> Dev #####
+##### Stage 1: Prepare -> Dev #####
 # Keep in mind, prod commands were not executed in dev image
 FROM prepare as dev
 
@@ -67,3 +54,6 @@ RUN pecl install xdebug \
 USER app
 # hirak/prestissimo plugin speeds up composer install a lot so let's add it
 RUN composer global require hirak/prestissimo
+
+# Feel free to add Production Stage here
+# Example: https://github.com/initx/php-docker-skeleton/blob/master/.docker/app/Dockerfile

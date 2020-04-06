@@ -1,8 +1,8 @@
 version: '3.7'
 services:
   app:
-    container_name: technikolor_php
-    image: technikolor-dev
+    container_name: technikolor-app
+    image: technikolor-app
     env_file:
       - .docker/shared_env
     build:
@@ -13,7 +13,7 @@ services:
       - .:/php/src/technikolor/app
 
   nginx:
-    container_name: technikolor_nginx
+    container_name: technikolor-nginx
     image: technikolor-nginx
     env_file:
       - .docker/shared_env
