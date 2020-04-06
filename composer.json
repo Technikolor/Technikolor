@@ -1,6 +1,6 @@
 {
     "name": "technikolor/technikolor",
-    "description": "The Technikolor App",
+    "description": "The Technikolor Framework",
     "type": "project",
     "require": {
         "php": "^7.4",
