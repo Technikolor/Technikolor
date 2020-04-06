@@ -28,3 +28,13 @@ services:
     volumes:
       - ./var/logs/nginx:/var/log/nginx
       - .:/php/src/technikolor/app
+
+  db:
+    image: postgres
+    container_name: technikolor-db
+    environment:
+      POSTGRES_DB: technikolor
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+    - ./var/dbdata:/var/lib/postgresql/data

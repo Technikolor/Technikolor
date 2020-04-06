@@ -2,6 +2,4 @@
 
 use Technikolor\Bootstrap;
 
-$bootstrap = new Bootstrap(__DIR__);
-
-return $bootstrap->app();
+return new Bootstrap(__DIR__);

@@ -2,6 +2,8 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$app = require_once __DIR__ . '/../bootstrap.php';
+$bootstrap = require_once __DIR__ . '/../bootstrap.php';
+
+$app = $bootstrap->app();
 
 $app->run();

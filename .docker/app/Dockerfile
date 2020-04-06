@@ -8,10 +8,13 @@ ENV PHP_FPM_DIR=/usr/local/etc/php-fpm.d
 
 RUN apt update && apt install -y \
     git \
+    libpq5 \
+    libpq-dev \
     libzip-dev
 
 RUN pecl install zip \
-    && docker-php-ext-enable zip
+    && docker-php-ext-enable zip \
+    && docker-php-ext-install pdo pdo_pgsql
 
 # Env PHP_INI_DIR comes from php:7.4-fpm image. Copy php.ini to config dir
 COPY .docker/app/php.ini $PHP_INI_DIR/conf.d/
