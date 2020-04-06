@@ -4,17 +4,24 @@
 
 The easiest, most advanced, PHP Framework
 
-## Create app
+## Install
 
 ```bash
-$ composer create-project technikolor/technikolor
+$ docker run --rm --interactive --tty --volume $PWD:/app \
+    composer create-project technikolor/technikolor
 ```
 
-## Start
-Inside app dir
+## Startup
+Run dev environment
 
 ```bash
 $ docker-compose up -d
+```
+
+Install dependencies
+
+```bash
+$ docker exec -it technikolor-app composer install
 ```
 
 Visit [localhost:8080](http://localhost:8080)
