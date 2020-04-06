@@ -18,12 +18,6 @@ Run dev environment
 $ docker-compose up -d
 ```
 
-Install dependencies
-
-```bash
-$ docker exec -it technikolor-app composer install
-```
-
 Visit [localhost:8080](http://localhost:8080)
 
 ## Docs
