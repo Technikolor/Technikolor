@@ -10,7 +10,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Book
 {
-    protected int $id;
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
+     */
+    private int $id;
 
-    protected string $name;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private string $s;
 }
