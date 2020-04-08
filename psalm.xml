@@ -9,9 +9,10 @@
 >
     <projectFiles>
         <directory name="app" />
-        <directory name="test" />
+        <directory name="tests" />
         <ignoreFiles>
             <directory name="vendor" />
+            <directory name="tests/_support" />
         </ignoreFiles>
     </projectFiles>
 </psalm>

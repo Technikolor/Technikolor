@@ -23,6 +23,11 @@ jobs:
         run: |
           docker exec technikolor-app bash -c 'cp .env.example .env; composer install'
 
+      - name: Run Psalm and PHPCS code quality check
+        run: |
+          docker exec technikolor-app vendor/bin/psalm
+          docker exec technikolor-app vendor/bin/phpcs --standard=ruleset.xml src/
+
       - name: Run test suite
         run: docker exec technikolor-app vendor/bin/codecept run
 

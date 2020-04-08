@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="QRB">
     <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
-    <exclude-pattern>*/tests/_output/*</exclude-pattern>
-    <exclude-pattern>*/tests/_support/_generated/*</exclude-pattern>
-    <exclude-pattern>*/tests/_data/*</exclude-pattern>
+
+    <exclude-pattern>tests/_output/*</exclude-pattern>
+    <exclude-pattern>tests/_support/_generated/*</exclude-pattern>
+    <exclude-pattern>tests/_data/*</exclude-pattern>
+
     <arg name="colors"/>
 
     <rule ref="PSR1"/>
