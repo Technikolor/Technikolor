@@ -14,7 +14,10 @@
     "require-dev": {
         "codeception/codeception": "^4.1",
         "slevomat/coding-standard": "^6.2",
-        "squizlabs/php_codesniffer": "^3.5"
+        "squizlabs/php_codesniffer": "^3.5",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0",
+        "vimeo/psalm": "^3.10"
     },
     "license": "MIT",
     "minimum-stability": "dev",
