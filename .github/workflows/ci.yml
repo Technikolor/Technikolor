@@ -1,0 +1,25 @@
+on: [push]
+
+name: CI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Up docker-compose stack
+        id: docker-compose-build
+        run: docker-compose -f docker-compose.yml up -d
+
+      - name: Check running containers
+        run: docker ps -a
+
+      - name: Run test suite
+        run: docker exec -it technikolor-app vendor/bin/codecept run
+
+      - name: Stop running containers
+        run: docker-compose stop
