@@ -3,6 +3,17 @@
 ##### Stage 0: Prepare #####
 FROM php:7.4-fpm as prepare
 
+ARG USER_ID
+ARG GROUP_ID
+
+RUN groupadd --gid $GROUP_ID app \
+    && useradd --create-home \
+    --home-dir /home/app \
+    --shell /bin/bash \
+    --uid $USER_ID \
+    --gid $GROUP_ID \
+    app
+
 ENV APP_DIR=/php/src/technikolor/app
 ENV PHP_FPM_DIR=/usr/local/etc/php-fpm.d
 
@@ -22,18 +33,6 @@ COPY .docker/app/php.ini $PHP_INI_DIR/conf.d/
 COPY .docker/app/pool.conf $PHP_FPM_DIR
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Add group and user to avoid read/write permission issues
-ENV USER_ID=1000
-ENV GROUP_ID=1000
-
-RUN groupadd --gid $GROUP_ID app \
-    && useradd --create-home \
-    --home-dir /home/app \
-    --shell /bin/bash \
-    --uid $USER_ID \
-    --gid $GROUP_ID \
-    app
 
 WORKDIR $APP_DIR
 
