@@ -3,13 +3,8 @@ services:
   app:
     container_name: technikolor-app
     image: technikolor-app
-    env_file:
-      - .docker/shared_env
     build:
       target: dev
-      args:
-        - USER_ID=${USER_ID}
-        - GROUP_ID=${GROUP_ID}
       context: .
       dockerfile: .docker/app/Dockerfile
     volumes:
@@ -18,8 +13,6 @@ services:
   nginx:
     container_name: technikolor-nginx
     image: technikolor-nginx
-    env_file:
-      - .docker/shared_env
     build:
       context: .
       target: dev

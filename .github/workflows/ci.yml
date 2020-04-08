@@ -3,7 +3,7 @@ on: [push]
 name: Continuous integration
 
 jobs:
-  ci:
+  CI:
     runs-on: ubuntu-latest
     timeout-minutes: 14
 
@@ -11,9 +11,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Up docker-compose stack
+      - name: Docker-compose build and up
         id: docker-compose-build
-        run: docker-compose -f docker-compose.yml up -d
+        run: |
+          docker-compose build \
+            --build-arg USER_ID=$(id -u) \
+            --build-arg GROUP_ID=$(id -g)
+
+          docker-compose up -d
 
       - name: Install dependencies
         run: docker exec technikolor-app composer install

@@ -3,11 +3,11 @@
 ##### Stage 0: Prepare #####
 FROM php:7.4-fpm as prepare
 
-ARG USER_ID
-ARG GROUP_ID
+ARG USER_ID=1000
+ARG GROUP_ID=1000
 
-RUN groupadd --gid $GROUP_ID app \
-    && useradd --create-home \
+RUN groupadd --gid $GROUP_ID app
+RUN useradd --create-home \
     --home-dir /home/app \
     --shell /bin/bash \
     --uid $USER_ID \
