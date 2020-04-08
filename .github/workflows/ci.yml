@@ -21,7 +21,7 @@ jobs:
 
       - name: Copy config file and install dependencies
         run: |
-          docker exec technikolor-app bash -c 'copy .env.example .env; composer install'
+          docker exec technikolor-app bash -c 'cp .env.example .env; composer install'
 
       - name: Run test suite
         run: docker exec technikolor-app vendor/bin/codecept run
