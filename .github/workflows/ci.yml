@@ -16,7 +16,12 @@ jobs:
         run: docker-compose -f docker-compose.yml up -d
 
       - name: Check running containers
-        run: docker ps -a
+        run: |
+          docker-compose ps
+          docker-compose logs
+
+      - name: Install dependencies
+        run: docker exec technikolor-app composer install
 
       - name: Run test suite
         run: docker exec technikolor-app vendor/bin/codecept run
