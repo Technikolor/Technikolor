@@ -11,8 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Docker-compose build and up
-        id: docker-compose-build
+      - name: Build and run app
         run: |
           docker-compose build \
             --build-arg USER_ID=$(id -u) \
@@ -20,8 +19,9 @@ jobs:
 
           docker-compose up -d
 
-      - name: Install dependencies
-        run: docker exec technikolor-app composer install
+      - name: Copy config file and install dependencies
+        run: |
+          docker exec technikolor-app bash -c 'copy .env.example .env; composer install'
 
       - name: Run test suite
         run: docker exec technikolor-app vendor/bin/codecept run
