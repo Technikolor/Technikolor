@@ -34,3 +34,9 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
     - ./var/dbdata:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    ports:
+      # Visit localhost:8081
+      - 8081:8080

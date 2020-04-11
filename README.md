@@ -20,8 +20,8 @@ $ docker-compose up -d
 
 Visit [localhost:8080](http://localhost:8080)
 
-## Docs
-
-Wiki in [this repository](https://github.com/Technikolor/Technikolor/wiki)
+## Have fun
+Start coding! Please keep in mind this is very early version of Technikolor.
+Lot of things going to change. Suggestions and bug reports welcome [here](https://github.com/Technikolor/Technikolor/issues).
 
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square

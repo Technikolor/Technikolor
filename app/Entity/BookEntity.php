@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="book")
  */
-class Book
+class BookEntity
 {
     /**
      * @ORM\Id
@@ -21,6 +21,11 @@ class Book
      * @ORM\Column(type="string", length=255)
      */
     private string $name;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
 
     public function getId(): int
     {
